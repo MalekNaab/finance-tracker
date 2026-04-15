@@ -1,0 +1,95 @@
+.insight-card {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.insight-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.insight-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.insight-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Color variants */
+.insight-red {
+  background-color: hsl(var(--error) / 0.07);
+  border-color: hsl(var(--error) / 0.15);
+}
+.insight-red .insight-icon {
+  background-color: hsl(var(--error) / 0.12);
+  color: hsl(var(--error));
+}
+.insight-red .insight-text {
+  color: hsl(var(--error));
+}
+
+.insight-green {
+  background-color: hsl(var(--success) / 0.07);
+  border-color: hsl(var(--success) / 0.15);
+}
+.insight-green .insight-icon {
+  background-color: hsl(var(--success) / 0.12);
+  color: hsl(var(--success));
+}
+.insight-green .insight-text {
+  color: hsl(var(--success));
+}
+
+.insight-neutral {
+  background-color: hsl(var(--secondary));
+  border-color: hsl(var(--border));
+}
+.insight-neutral .insight-icon {
+  background-color: hsl(var(--muted));
+  color: hsl(var(--muted-foreground));
+}
+.insight-neutral .insight-text {
+  color: hsl(var(--muted-foreground));
+}
+
+.insight-primary {
+  background-color: hsl(var(--primary) / 0.07);
+  border-color: hsl(var(--primary) / 0.15);
+}
+.insight-primary .insight-icon {
+  background-color: hsl(var(--primary) / 0.12);
+  color: hsl(var(--primary));
+}
+.insight-primary .insight-text {
+  color: hsl(var(--primary));
+}
+
+.insight-accent {
+  background-color: hsl(var(--accent) / 0.1);
+  border-color: hsl(var(--accent) / 0.2);
+}
+.insight-accent .insight-icon {
+  background-color: hsl(var(--accent) / 0.15);
+  color: hsl(var(--accent));
+}
+.insight-accent .insight-text {
+  color: hsl(38 70% 35%);
+}
+
+.dark .insight-accent .insight-text {
+  color: hsl(var(--accent));
+}

@@ -1,0 +1,19 @@
+.category-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.category-badge.expense {
+  background-color: hsl(var(--secondary));
+  color: hsl(var(--foreground));
+}
+
+.category-badge.income {
+  background-color: hsl(var(--success) / 0.15);
+  color: hsl(var(--success));
+}

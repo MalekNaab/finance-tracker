@@ -1,0 +1,329 @@
+.settings-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  max-width: 720px;
+}
+
+.saved-toast {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: hsl(var(--income));
+  background-color: hsl(var(--income) / 0.1);
+  padding: 0.375rem 0.875rem;
+  border-radius: 999px;
+  animation: fadeInOut 2s ease forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  15% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.settings-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.settings-section-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.settings-section-title.danger {
+  color: hsl(var(--error));
+}
+
+.settings-card {
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.settings-row-info {
+  flex: 1;
+}
+
+.settings-row-label {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.25rem;
+}
+
+.settings-row-desc {
+  font-size: 0.8125rem;
+  color: hsl(var(--muted-foreground));
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: hsl(var(--secondary));
+  border: 1px solid hsl(var(--border));
+  border-radius: 999px;
+  padding: 3px;
+  cursor: pointer;
+  gap: 0;
+  transition: background-color 0.2s ease;
+}
+
+.theme-option {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: hsl(var(--muted-foreground));
+  z-index: 1;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.theme-thumb {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  left: 3px;
+  width: calc(50% - 3px);
+  background-color: hsl(var(--card));
+  border-radius: 999px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  transition: left 0.2s ease;
+}
+
+.theme-toggle.dark-active .theme-thumb {
+  left: calc(50%);
+}
+
+.theme-toggle .theme-option:first-child {
+  color: hsl(var(--foreground));
+}
+
+.theme-toggle.dark-active .theme-option:first-child {
+  color: hsl(var(--muted-foreground));
+}
+
+.theme-toggle.dark-active .theme-option:last-child {
+  color: hsl(var(--foreground));
+}
+
+/* Currency Options */
+.currency-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.currency-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  border: 1px solid hsl(var(--border));
+  border-radius: calc(var(--radius) - 4px);
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  color: hsl(var(--foreground));
+}
+
+.currency-option:hover {
+  border-color: hsl(var(--primary) / 0.4);
+  background-color: hsl(var(--primary) / 0.04);
+}
+
+.currency-option.active {
+  border-color: hsl(var(--primary));
+  background-color: hsl(var(--primary) / 0.07);
+}
+
+.currency-symbol {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: hsl(var(--primary));
+  min-width: 20px;
+}
+
+.currency-label {
+  font-size: 0.875rem;
+  color: hsl(var(--foreground));
+}
+
+/* Budget Input */
+.budget-input-group {
+  display: flex;
+  align-items: center;
+  border: 1px solid hsl(var(--border));
+  border-radius: calc(var(--radius) - 4px);
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.budget-input-group:focus-within {
+  border-color: hsl(var(--primary));
+  box-shadow: 0 0 0 3px hsl(var(--primary) / 0.12);
+}
+
+.budget-symbol {
+  padding: 0.625rem 0.75rem;
+  background-color: hsl(var(--secondary));
+  color: hsl(var(--muted-foreground));
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border-right: 1px solid hsl(var(--border));
+}
+
+.budget-input {
+  padding: 0.625rem 0.875rem;
+  background: none;
+  border: none;
+  color: hsl(var(--foreground));
+  font-size: 0.9375rem;
+  font-weight: 500;
+  outline: none;
+  width: 120px;
+}
+
+/* Categories */
+.categories-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.category-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.category-row:last-child {
+  border-bottom: none;
+}
+
+.category-name {
+  font-size: 0.9375rem;
+  color: hsl(var(--foreground));
+  font-weight: 500;
+}
+
+.category-default-tag {
+  font-size: 0.75rem;
+  color: hsl(var(--muted-foreground));
+  background-color: hsl(var(--secondary));
+  padding: 0.2rem 0.625rem;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+.add-category-form {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.add-category-form .form-input {
+  flex: 1;
+}
+
+.form-input {
+  padding: 0.625rem 0.875rem;
+  border: 1px solid hsl(var(--border));
+  border-radius: calc(var(--radius) - 4px);
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-size: 0.9375rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+}
+
+.form-input:focus {
+  border-color: hsl(var(--primary));
+  box-shadow: 0 0 0 3px hsl(var(--primary) / 0.12);
+}
+
+.form-input.error {
+  border-color: hsl(var(--error));
+}
+
+.form-error {
+  font-size: 0.8125rem;
+  color: hsl(var(--error));
+  font-weight: 500;
+}
+
+/* Export */
+.export-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.export-btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.export-divider {
+  height: 1px;
+  background-color: hsl(var(--border));
+  margin: 0 -1.5rem;
+}
+
+/* Danger Zone */
+.danger-zone .settings-card {
+  border-color: hsl(var(--error) / 0.25);
+  background-color: hsl(var(--error) / 0.02);
+}
+
+.btn-ghost.danger:hover {
+  background-color: hsl(var(--error) / 0.1);
+  color: hsl(var(--error));
+}
+
+@media (max-width: 600px) {
+  .currency-options {
+    grid-template-columns: 1fr;
+  }
+
+  .settings-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .theme-toggle {
+    width: 100%;
+    justify-content: center;
+  }
+}
